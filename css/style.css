@@ -520,6 +520,10 @@ footer {
         width: 90%;
     }
 
+    #gura ul li p {
+        margin-top: 0.2rem;
+        margin-bottom: 2rem;
+    }
     .flex-list li {
         flex-direction: column;
         width: 90%;
@@ -547,5 +551,6 @@ footer {
     table tr td {
         word-break: break-all;
     }
+
 
 }
