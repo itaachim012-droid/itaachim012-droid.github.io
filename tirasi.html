@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <meta name="description" content="portfolio">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!-- フォント、ファビコン -->
+    <link rel="icon" type="image/png" href="images/ikaku.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.min.css"><!-- lightbox -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <a href="#top"></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#top">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="works">
+            <div class="wrapper">
+                <h2>グラフィック</h2>
+                <p3 class="section-title">制作作品</p3>
+                <h3 class="g-caption-title">プロ級のホームページを簡単に！TechNovaの作成サービスのチラシ</h3>
+                <div class="g-caption">
+                    <a href="images/g.image5.webp" data-lightbox="photo"><img src="images/g.image5.webp" alt="チラシ"></a>
+                </div>
+                <div class="caption">
+                    <ul class="flex-list">
+                        <li>
+                            <span class="label">ターゲット</span>
+                            <span class="content">30~40 代の中小企業経営者/起業家層</span>
+                        </li>
+                        <li>
+                            <span class="label">紹介</span>
+                            <span class="content"> TechNova Inc.（テックノバ株式会社）。中小企業や個人事業主向けに、ホームページ作成のメリットを詳しくアピールし、視覚的に魅力的で、ビジネス成長を促す内容を希望。</span>
+                        </li>
+                        <li>
+                            <span class="label">コンセプト</span>
+                            <span class="content">若い起業家が安心したwebサイト作りができることを認識できる。信頼×成長×安心</span>
+                        </li>
+                        <li>
+                            <span class="label">デザイン</span>
+                            <span class="content">ロゴ———左右対象にすることで信頼感を。成長・未来が途切れないように。<br>
+                                チラシ全体———配色をブルー系でまとめて信頼や未来感を表現。オレンジはビタミンカラーで行動を促すように。ピンクやブラウンを取り入れることで初心者でも親しみやすく。金と銀で視覚的に注目を。<br>
+                                ・上部→イメージの印象をアピール<br>
+                                ・中部→丸や角丸で親しみやすさを出すことで、文字が多くても読んでもらえるように<br>
+                                ・下部→シンプルで見やすく
+                            </span>
+                        </li>
+                        <li>
+                            <span class="label">製作期間</span>
+                            <span class="content">５日</span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="highlight">
+                    <p><a href="guracaption.html">グラフィック作品一覧へ▶</p></a>
+                </div>
+        </section>
+
+
+        <section id="contact" class="contact mb-100">
+            <div class="wrapper">
+                <h2>Contact</h2>
+                <p3 class="section-title">連絡先</p3>
+
+                <p>
+                    〒329-2142栃木県矢板市木幡1317-6<br>
+                    tel: 090-2147-2308<br>
+                    mail: itaachi.m.012@gmail.com
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p><small>&copy; 2025 ISEKI MAKI All Rights Reserved.</small></p>
+    </footer>
+
+
+
+    <div id="page-top">
+        <a href="#">
+            <i class="fas fa-chevron-up"></i>
+            <span>TOP</span>
+        </a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js"></script>
+    <script>$(function () {
+            const pageTop = $('#page-top');
+
+            // 初期状態では非表示
+            pageTop.hide();
+
+            // スクロール時の処理
+            $(window).scroll(function () {
+                // 100pxスクロールしたらボタンを表示
+                if ($(this).scrollTop() > 100) {
+                    pageTop.fadeIn(); // ふわっと表示
+                } else {
+                    pageTop.fadeOut(); // ふわっと非表示
+                }
+            });
+
+            // ボタンクリック時の処理
+            pageTop.click(function () {
+                // ページトップまで500ミリ秒かけてスムーススクロール
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+                return false; // aタグのデフォルト動作（一瞬でトップへ移動）をキャンセル
+            });
+
+
+
+        });</script>
+
+
+
+</body>
+
+</html>
