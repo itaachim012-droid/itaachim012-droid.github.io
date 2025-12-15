@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <meta name="description" content="portfolio">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!-- フォント、ファビコン -->
+    <link rel="icon" type="image/png" href="images/ikaku.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.min.css"><!-- lightbox -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <a href="#top"></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#top">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="works">
+            <div class="wrapper">
+                <h2>グラフィック</h2>
+                <p3 class="section-title">制作作品</p3>
+                <h3 class="g-caption-title"> Cafe STAR COFFEE/オーナー名刺デザイン（２案目）</h3>
+                <div class="g-caption">
+                    <a href="images/g.image3.webp" data-lightbox="photo"><img src="images/g.image3.webp" alt="名刺2"></a>
+                </div>
+                <div class="caption">
+                    <ul class="flex-list">
+                        <li>
+                            <span class="label">ターゲット</span>
+                            <span class="content">仕入れ先の業者</span>
+                        </li>
+                        <li>
+                            <span class="label">紹介</span>
+                            <span class="content">田中
+                                亜希子（オーナー）。優しく穏やかで人懐っこい性格。以前は別の仕事に就いていたが、カフェを開くことを夢見て勉強を重ねて、おしゃれで落ち着いた隠れ家的なカフェを営んでいる。趣味は料理、旅行、読書、健康に関すること。</span>
+                        </li>
+                        <li>
+                            <span class="label">コンセプト</span>
+                            <span class="content">オーナーの人柄や店の雰囲気が想像できるデザイン</span>
+                        </li>
+                        <li>
+                            <span class="label">デザイン</span>
+                            <span class="content">
+                                ・趣味が旅行→裏面をスタンプラリー風なデザインへ<br>
+                                ・裏面に地図を載せることで再び訪れやすく<br>
+                                ・ブルー、レッド、ホワイト→新しい風を感じられるように<br>
+                                ・ロゴをスタンプ風に<br>
+                                ・正面に薄く入れることで、一目で分かるように</span>
+                        </li>
+                        <li>
+                            <span class="label">製作期間</span>
+                            <span class="content">６日（１案目の期間含む）</span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="highlight">
+                    <p><a href="guracaption.html">グラフィック作品一覧へ▶</p></a>
+                </div>
+        </section>
+
+
+        <section id="contact" class="contact mb-100">
+            <div class="wrapper">
+                <h2>Contact</h2>
+                <p3 class="section-title">連絡先</p3>
+
+                <p>
+                    〒329-2142栃木県矢板市木幡1317-6<br>
+                    tel: 090-2147-2308<br>
+                    mail: itaachi.m.012@gmail.com
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p><small>&copy; 2025 ISEKI MAKI All Rights Reserved.</small></p>
+    </footer>
+
+
+
+    <div id="page-top">
+        <a href="#">
+            <i class="fas fa-chevron-up"></i>
+            <span>TOP</span>
+        </a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js"></script>
+    <script>$(function () {
+            const pageTop = $('#page-top');
+
+            // 初期状態では非表示
+            pageTop.hide();
+
+            // スクロール時の処理
+            $(window).scroll(function () {
+                // 100pxスクロールしたらボタンを表示
+                if ($(this).scrollTop() > 100) {
+                    pageTop.fadeIn(); // ふわっと表示
+                } else {
+                    pageTop.fadeOut(); // ふわっと非表示
+                }
+            });
+
+            // ボタンクリック時の処理
+            pageTop.click(function () {
+                // ページトップまで500ミリ秒かけてスムーススクロール
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+                return false; // aタグのデフォルト動作（一瞬でトップへ移動）をキャンセル
+            });
+
+
+
+        });</script>
+
+
+
+</body>
+
+</html>

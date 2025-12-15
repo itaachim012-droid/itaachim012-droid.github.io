@@ -1,0 +1,590 @@
+@charset "UTF-8";
+
+/* ユニバーサルセレクター：全てのタグに設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+html,
+body {
+    /* スクロールバーを含めたブラウザのサイズを基準とする */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* すべての要素に box-sizing: border-box を適用（ress.cssにも含まれるが確認用） */
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    transition: 0.3s ease-in-out;
+}
+
+img:hover {
+    filter: brightness(80%);
+
+}
+
+#aki:hover img {
+    filter: brightness(100%);
+}
+
+
+/* nav-------------------------------------------------- */
+#navi {
+    position: fixed;
+    top: 0;
+    left: -20%;
+    width: 20%;
+    height: 100vh;
+    background: #ffff99;
+    display: grid;
+    place-items: center;
+    transition: .8s;
+    pointer-events: none;
+
+    &.open {
+        left: 0%;
+        pointer-events: all;
+    }
+
+    ul {
+        display: grid;
+        gap: 1em;
+        padding-left: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+    }
+}
+
+
+/* ハンバーガーメニュー-------------------------------------------------- */
+.btn {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    width: 30px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    outline: none;
+
+    /* ボタンの中の<span>(線) */
+    span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #ffffff;
+        transition: .8s;
+
+        &:nth-child(1) {
+            /* 線1 */
+            top: 0;
+        }
+
+        &:nth-child(2) {
+            /* 線2 */
+            top: 8px;
+        }
+
+        &:nth-child(3) {
+            /* 線3 */
+            top: 16px;
+        }
+    }
+
+    /* ×の状態 */
+    &.open {
+        span {
+            background: black;
+
+            &:nth-child(1) {
+                translate: 0 8px;
+                rotate: 45deg;
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                translate: 0 -8px;
+                rotate: -45deg;
+            }
+        }
+    }
+}
+
+#kaiin ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+}
+
+
+#kaiin a {
+    text-decoration: none;
+    color: #ffffe0;
+    text-decoration: none;
+    font-size: 1.4rem;
+    margin-right: 1.2rem;
+}
+
+
+#back a {
+    text-decoration: none;
+    color: #ffffe0;
+    text-decoration: none;
+    font-size: 1.4rem;
+    margin-left: -500px;
+    background-color: #6b3f31;
+    border-radius: 20px;
+    padding: .75rem 1.5rem;
+    transition: 1.5s ease;
+    text-decoration: none;
+
+}
+
+
+/* header-------------------------------------------------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(203, 204, 255, 0.582);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 3rem 2vw 3rem 5vw;
+    z-index: 1000;
+}
+
+.logo {
+    width: 80px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+/* 背景（セクション）動き-------------------------------------------------- */
+
+body {
+    background-image:
+        /* 【上層】半透明のグラデーション */
+        linear-gradient(to top, rgba(255, 116, 36, 0.568), rgb(70, 65, 124)),
+
+        /* 【下層】元の背景画像 */
+        url(../images/hosizora.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom 500px;
+}
+
+section {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+
+    &:nth-child(odd) {
+        background: rgba(255, 255, 255, 0.253);
+    }
+}
+
+section:first-child {
+    background-image: url(../images/view2.webp);
+    background-size: cover;
+    background-position: 45% center;
+    height: auto;
+    background-repeat: no-repeat;
+}
+
+#top {
+    font-size: 1.4rem;
+    color: #ffffe0;
+    padding-top: 40rem;
+    text-align: center;
+    line-height: 3em;
+}
+
+
+.wrapper {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    line-height: 3em;
+}
+
+/* 初めての方へ-------------------------------------------------------------- */
+
+#hazimeni {
+    margin-bottom: 1.8rem;
+}
+
+#hazi {
+    border-radius: 20px;
+    background: #ffffea;
+    padding: 3.25vw 9.25vw 0vw 9.25vw;
+    padding-top: 4vw;
+    padding-bottom: 8vw;
+    color: #6b3f31;
+
+}
+
+#hazi ul p {
+    width: 100%;
+    text-align: left;
+}
+
+ul {
+    list-style: none;
+}
+
+h3 {
+    margin-top: 40px;
+    margin-bottom: 3rem;
+    color: #FFABCE;
+    font-size: 2.8rem;
+}
+
+#hazi ul li,
+#hazi p {
+    font-size: 1.6rem;
+    text-align: left;
+}
+
+/* .image1 スタイルｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰ */
+.image1 {
+    position: fixed;
+    width: 10vw;
+    right: 3vw;
+    bottom: -10vw;
+    opacity: 0;
+
+    /* 【アニメーション設定】動きを滑らかにする */
+    transition: opacity 0.5s ease, bottom 0.5s ease;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* スクロール開始時に付与されるスタイル */
+.image1.is-active {
+    opacity: 1;
+    bottom: 0vw;
+}
+
+/* もっと見るボタン-------------------------------------------------- */
+.motto {
+    margin-top: 20px;
+    display: inline-block;
+    font-size: 1.8rem;
+    background-color: #fffacd;
+    border-radius: 20px;
+    padding: .75rem 1.5rem;
+    transition: 1.5s ease;
+    text-decoration: none;
+    color: inherit
+}
+
+.motto:hover {
+    background-color: #ffd700;
+    scale: 1.2;
+}
+
+
+/* footer共通設定-------------------------------------------------- */
+
+
+footer {
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+}
+
+
+/* スライダー------------------------------------------------------------ */
+.slider {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px !important;
+}
+
+.slick-slide {
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.slick-list {
+    margin: 0 !important;
+}
+
+.slick-slide img {
+    border-radius: 20px;
+}
+
+.slick-slide a img {
+    width: 100%;
+    height: auto;
+}
+
+.slick-prev::before,
+.slick-next::before {
+    font-size: 3.5rem;
+}
+
+
+/* 絵本ページ------------------------------------------------------------------------------- */
+#aki {
+    border-radius: 20px;
+    background: #ffffea;
+    padding: 3.25vw 6.25vw 6.25vw 6.25vw;
+    margin-top: 10rem;
+    margin-bottom: 8rem;
+    color: #6b3f31;
+    font-size: 1.5rem;
+}
+
+#aki p {
+    margin-top: 20px;
+}
+
+#aki img {
+    max-width: 30%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.itiran ul {
+    /* 必須: Gridを有効にし、デフォルトのリストスタイルをリセット */
+    display: grid;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 60px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    border-radius: 20px;
+    background: #ffffea;
+    padding: 3.25vw 6.25vw 6.25vw 6.25vw;
+    margin-top: 2rem;
+    margin-bottom: 8rem;
+    color: #6b3f31;
+    font-size: 1.5rem;
+}
+
+/* 画像が li の幅いっぱいに広がるように設定 */
+.itiran img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* リンクの装飾をリセット (必要に応じて) */
+.itiran a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+#title {
+    margin-top: 10rem;
+}
+
+
+/*  モバイル--------------------------------------------- */
+@media (max-width: 767px) {
+
+    body,
+    html {
+        overflow-x: hidden !important;
+        min-width: 320px;
+    }
+
+    #top h1 {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 90%;
+        width: 100%;
+        text-align: center;
+        font-size: 1.8rem;
+        padding-top: 0 !important;
+    }
+
+
+    /* ファーストビュー */
+    section:first-child {
+        background-size: cover;
+        background-position: 45% center;
+        height: 100vh;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    .wrapper {
+        max-width: 100%;
+        padding: 0 20px;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 2em;
+        font-size: 1.2rem;
+    }
+
+    #navi {
+        width: 60%;
+        left: -60%;
+
+    }
+
+    .logo {
+        width: 60px;
+
+    }
+
+    #kaiin {
+        max-width: 45%;
+        font-size: 0.5rem;
+    }
+
+    #kaiin ul {
+        white-space: nowrap;
+        gap: 10px;
+        padding-top: 10px;
+    }
+
+    #kaiin a {
+        font-size: 1.2rem;
+        margin-right: 0;
+    }
+
+    #back a {
+        margin-left: -50px;
+    }
+
+
+    header {
+        padding: 2rem 2rem 3rem 5rem;
+    }
+
+
+    #hazi {
+        margin: 2rem auto 2rem auto;
+        padding: 2rem 4rem 4rem 4rem;
+        max-width: 70%;
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+
+    #hazi h3 {
+        font-size: 1.8rem;
+    }
+
+    body {
+        min-width: 375px;
+        overflow-x: hidden;
+    }
+
+    /* フッター */
+    .page-footer {
+        padding-top: 12rem;
+    }
+
+    .info {
+        padding-left: 5rem;
+    }
+
+
+    #aki {
+        background: #ffffea;
+        padding: 3.25vw 6.25vw 6.25vw 6.25vw;
+        margin: 8rem 2rem 2rem 2rem;
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+
+
+
+    /* image1 */
+    .image1 {
+        width: 17vw;
+    }
+
+    /* スライダー */
+    .slider {
+        max-width: 60vw !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+
+    .slick-list {
+        margin: 0 !important;
+    }
+
+    .slick-slide {
+        margin: 0 5px;
+    }
+
+    .slick-prev::before,
+    .slick-next::before {
+        font-size: 2.5rem;
+    }
+
+    /* モバイル版のリスト (.itiran ul) の調整 */
+    .itiran ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 20px 15px 30px 15px;
+        margin-top: 3rem;
+        margin-bottom: 5rem;
+
+        list-style: none;
+        font-size: 1.2rem;
+        width: 90%;
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #title {
+        margin-top: 8rem;
+        font-size: 2rem;
+    }
+
+    /* image1 */
+    .image1 {
+        width: 17vw;
+    }
+}
