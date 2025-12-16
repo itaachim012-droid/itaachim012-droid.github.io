@@ -519,6 +519,10 @@ footer {
     .g-caption {
         width: 90%;
     }
+    
+    .g-caption-title {
+        font-size: 1.5rem;
+    }
 
     #gura ul li p {
         margin-top: 0.2rem;
@@ -554,3 +558,4 @@ footer {
 
 
 }
+
